@@ -8,12 +8,13 @@
       <ObjectId>16385</ObjectId>
       <StateNumber>560</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>570</IntrospectionStateNumber>
+      <IntrospectionStateNumber>638</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
-      <Relations>sequence|table|16386|16388|1
-sequence|table|16394|16396|1
-sequence|table|16414|16416|1
+      <Relations>sequence|table|16626|16628|1
+sequence|table|16634|16636|1
+sequence|table|16654|16656|1
+sequence|table|16670|16672|1
 </Relations>
     </database>
     <database id="3" parent="1" name="juntaneitor">
@@ -95,7 +96,7 @@ sequence|table|16414|16416|1
       <Comment>standard public schema</Comment>
       <StateNumber>351</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>571</IntrospectionStateNumber>
+      <IntrospectionStateNumber>639</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -155,221 +156,337 @@ sequence|table|16414|16416|1
       <SchemaName>pg_catalog</SchemaName>
       <SchemaId>11</SchemaId>
     </extension>
-    <sequence id="24" parent="16" name="expenses_id_seq">
-      <ObjectId>16414</ObjectId>
-      <StateNumber>568</StateNumber>
+    <sequence id="24" parent="16" name="expense_details_id_seq">
+      <ObjectId>16670</ObjectId>
+      <StateNumber>631</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
-    <sequence id="25" parent="16" name="migrations_id_seq">
-      <ObjectId>16386</ObjectId>
-      <StateNumber>563</StateNumber>
+    <sequence id="25" parent="16" name="expenses_id_seq">
+      <ObjectId>16654</ObjectId>
+      <StateNumber>629</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="26" parent="16" name="migrations_id_seq">
+      <ObjectId>16626</ObjectId>
+      <StateNumber>624</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
-    <sequence id="26" parent="16" name="users_id_seq">
-      <ObjectId>16394</ObjectId>
-      <StateNumber>564</StateNumber>
+    <sequence id="27" parent="16" name="users_id_seq">
+      <ObjectId>16634</ObjectId>
+      <StateNumber>625</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
-    <table id="27" parent="16" name="expenses">
-      <ObjectId>16416</ObjectId>
+    <table id="28" parent="16" name="expense_details">
+      <ObjectId>16672</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>568</StateNumber>
+      <StateNumber>631</StateNumber>
     </table>
-    <table id="28" parent="16" name="migrations">
-      <ObjectId>16388</ObjectId>
+    <table id="29" parent="16" name="expenses">
+      <ObjectId>16656</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>563</StateNumber>
+      <StateNumber>631</StateNumber>
     </table>
-    <table id="29" parent="16" name="password_resets">
-      <ObjectId>16407</ObjectId>
+    <table id="30" parent="16" name="migrations">
+      <ObjectId>16628</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>566</StateNumber>
+      <StateNumber>624</StateNumber>
     </table>
-    <table id="30" parent="16" name="users">
-      <ObjectId>16396</ObjectId>
+    <table id="31" parent="16" name="password_resets">
+      <ObjectId>16647</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>564</StateNumber>
+      <StateNumber>627</StateNumber>
     </table>
-    <column id="31" parent="27" name="id">
+    <table id="32" parent="16" name="users">
+      <ObjectId>16636</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>629</StateNumber>
+    </table>
+    <column id="33" parent="28" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>568</StateNumber>
-      <DefaultExpression>nextval(&apos;expenses_id_seq&apos;::regclass)</DefaultExpression>
+      <StateNumber>631</StateNumber>
+      <DefaultExpression>nextval(&apos;expense_details_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="32" parent="27" name="created_at">
+    <column id="34" parent="28" name="expense_id">
       <Position>2</Position>
-      <DataType>timestamp(0)|0s</DataType>
-      <StateNumber>568</StateNumber>
-      <TypeId>1114</TypeId>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>631</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="33" parent="27" name="updated_at">
+    <column id="35" parent="28" name="title">
       <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>631</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="36" parent="28" name="amount">
+      <Position>4</Position>
+      <DataType>double precision|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>631</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="37" parent="28" name="description">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>631</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="38" parent="28" name="created_at">
+      <Position>6</Position>
       <DataType>timestamp(0)|0s</DataType>
-      <StateNumber>568</StateNumber>
+      <StateNumber>631</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="34" parent="27" name="expenses_pkey">
-      <ObjectId>16420</ObjectId>
-      <StateNumber>568</StateNumber>
+    <column id="39" parent="28" name="updated_at">
+      <Position>7</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>631</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="40" parent="28" name="expense_details_pkey">
+      <ObjectId>16679</ObjectId>
+      <StateNumber>631</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="35" parent="27" name="expenses_pkey">
-      <ObjectId>16421</ObjectId>
-      <StateNumber>568</StateNumber>
+    <key id="41" parent="28" name="expense_details_pkey">
+      <ObjectId>16680</ObjectId>
+      <StateNumber>631</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>expense_details_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="42" parent="28" name="expense_details_expense_id_foreign">
+      <ObjectId>16681</ObjectId>
+      <StateNumber>631</StateNumber>
+      <ColNames>expense_id</ColNames>
+      <RefTableId>16656</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>expenses</RefTableName>
+      <RefKeyName>expenses_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="43" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>629</StateNumber>
+      <DefaultExpression>nextval(&apos;expenses_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="44" parent="29" name="creator_id">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>629</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="45" parent="29" name="title">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>629</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="46" parent="29" name="description">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>629</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="47" parent="29" name="created_at">
+      <Position>5</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>629</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="48" parent="29" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>629</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="49" parent="29" name="expenses_pkey">
+      <ObjectId>16663</ObjectId>
+      <StateNumber>629</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="50" parent="29" name="expenses_pkey">
+      <ObjectId>16664</ObjectId>
+      <StateNumber>629</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>expenses_pkey</UnderlyingIndexName>
     </key>
-    <column id="36" parent="28" name="id">
+    <foreign-key id="51" parent="29" name="expenses_creator_id_foreign">
+      <ObjectId>16665</ObjectId>
+      <StateNumber>629</StateNumber>
+      <ColNames>creator_id</ColNames>
+      <RefTableId>16636</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="52" parent="30" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>563</StateNumber>
+      <StateNumber>624</StateNumber>
       <DefaultExpression>nextval(&apos;migrations_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="37" parent="28" name="migration">
+    <column id="53" parent="30" name="migration">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>563</StateNumber>
+      <StateNumber>624</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="38" parent="28" name="batch">
+    <column id="54" parent="30" name="batch">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>563</StateNumber>
+      <StateNumber>624</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="39" parent="28" name="migrations_pkey">
-      <ObjectId>16392</ObjectId>
-      <StateNumber>563</StateNumber>
+    <index id="55" parent="30" name="migrations_pkey">
+      <ObjectId>16632</ObjectId>
+      <StateNumber>624</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="40" parent="28" name="migrations_pkey">
-      <ObjectId>16393</ObjectId>
-      <StateNumber>563</StateNumber>
+    <key id="56" parent="30" name="migrations_pkey">
+      <ObjectId>16633</ObjectId>
+      <StateNumber>624</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>migrations_pkey</UnderlyingIndexName>
     </key>
-    <column id="41" parent="29" name="email">
+    <column id="57" parent="31" name="email">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>566</StateNumber>
+      <StateNumber>627</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="42" parent="29" name="token">
+    <column id="58" parent="31" name="token">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>566</StateNumber>
+      <StateNumber>627</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="43" parent="29" name="created_at">
+    <column id="59" parent="31" name="created_at">
       <Position>3</Position>
       <DataType>timestamp(0)|0s</DataType>
-      <StateNumber>566</StateNumber>
+      <StateNumber>627</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="44" parent="29" name="password_resets_email_index">
-      <ObjectId>16413</ObjectId>
-      <StateNumber>566</StateNumber>
+    <index id="60" parent="31" name="password_resets_email_index">
+      <ObjectId>16653</ObjectId>
+      <StateNumber>627</StateNumber>
       <ColNames>email</ColNames>
     </index>
-    <column id="45" parent="30" name="id">
+    <column id="61" parent="32" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>564</StateNumber>
+      <StateNumber>625</StateNumber>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="46" parent="30" name="name">
+    <column id="62" parent="32" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>564</StateNumber>
+      <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="47" parent="30" name="email">
+    <column id="63" parent="32" name="email">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>564</StateNumber>
+      <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="48" parent="30" name="email_verified_at">
+    <column id="64" parent="32" name="email_verified_at">
       <Position>4</Position>
       <DataType>timestamp(0)|0s</DataType>
-      <StateNumber>564</StateNumber>
+      <StateNumber>625</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="49" parent="30" name="password">
+    <column id="65" parent="32" name="password">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>564</StateNumber>
+      <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="50" parent="30" name="remember_token">
+    <column id="66" parent="32" name="remember_token">
       <Position>6</Position>
       <DataType>varchar(100)|0s</DataType>
-      <StateNumber>564</StateNumber>
+      <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="51" parent="30" name="created_at">
+    <column id="67" parent="32" name="created_at">
       <Position>7</Position>
       <DataType>timestamp(0)|0s</DataType>
-      <StateNumber>564</StateNumber>
+      <StateNumber>625</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="52" parent="30" name="updated_at">
+    <column id="68" parent="32" name="updated_at">
       <Position>8</Position>
       <DataType>timestamp(0)|0s</DataType>
-      <StateNumber>564</StateNumber>
+      <StateNumber>625</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="53" parent="30" name="users_pkey">
-      <ObjectId>16403</ObjectId>
-      <StateNumber>564</StateNumber>
+    <index id="69" parent="32" name="users_pkey">
+      <ObjectId>16643</ObjectId>
+      <StateNumber>625</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="54" parent="30" name="users_email_unique">
-      <ObjectId>16405</ObjectId>
-      <StateNumber>564</StateNumber>
+    <index id="70" parent="32" name="users_email_unique">
+      <ObjectId>16645</ObjectId>
+      <StateNumber>625</StateNumber>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="55" parent="30" name="users_pkey">
-      <ObjectId>16404</ObjectId>
-      <StateNumber>564</StateNumber>
+    <key id="71" parent="32" name="users_pkey">
+      <ObjectId>16644</ObjectId>
+      <StateNumber>625</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
     </key>
-    <key id="56" parent="30" name="users_email_unique">
-      <ObjectId>16406</ObjectId>
-      <StateNumber>564</StateNumber>
+    <key id="72" parent="32" name="users_email_unique">
+      <ObjectId>16646</ObjectId>
+      <StateNumber>625</StateNumber>
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>

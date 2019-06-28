@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Expense;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ExpenseController extends Controller
@@ -14,7 +15,11 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        //
+        $expenses = Expense::all();
+        return response()->json($expenses)
+            ->status(200)
+            ->header('Content-Type', 'application/json')
+            ->header('Date', Carbon::now());
     }
 
     /**
@@ -24,7 +29,7 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
