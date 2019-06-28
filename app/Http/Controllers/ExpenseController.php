@@ -17,7 +17,6 @@ class ExpenseController extends Controller
     {
         $expenses = Expense::all();
         return response()->json($expenses)
-            ->status(200)
             ->header('Content-Type', 'application/json')
             ->header('Date', Carbon::now());
     }

@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="477207cc-13f8-4d27-ada1-10708ebcce13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/franco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Expense.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Expense.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExpenseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExpenseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_27_221104_create_expenses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_27_221104_create_expenses_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_27_223459_create_expense_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_27_223459_create_expense_details_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,8 +103,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ExpenseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="400">
+              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+              <folding>
+                <element signature="e#40#56#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -358,12 +355,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561673345796</updated>
-      <workItem from="1561673346992" duration="8592000" />
+      <workItem from="1561673346992" duration="8703000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8592000" />
+    <option name="totallyTimeSpent" value="8703000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -497,8 +494,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ExpenseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="400">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+          <folding>
+            <element signature="e#40#56#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
