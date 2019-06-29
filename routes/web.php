@@ -12,5 +12,8 @@
 */
 
 Route::post('/expenses', 'ExpenseController@store');
-Route::get('/expenses/{id}', 'ExpenseController@getExpensesByUserId');
+Route::get('/expenses/{id}', 'ExpenseController@show');
 Route::put('/expenses/{id}', 'ExpenseController@update');
+Route::delete('/expenses/{id}', 'ExpenseController@destroy');
+
+Route::get('/user/{id}/expenses', 'UserController@expenses');

@@ -45,11 +45,11 @@ class ExpenseController extends Controller
      * @param  integer        $id
      * @return \Illuminate\Http\Response
      */
-    public function getExpensesByUserId($id)
+    public function show($id)
     {
-        $expenses = Expense::where('creator_id', $id)->get();
+        $expense = Expense::find($id);
 
-        return response()->json($expenses, 200);
+        return response()->json($expense, 200);
     }
 
 
@@ -75,8 +75,10 @@ class ExpenseController extends Controller
      * @param  \App\Expense  $expense
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Expense $expense)
+    public function destroy($id)
     {
-        //
+        Expense::find($id)->delete();
+
+        return response()->with('status', 200);
     }
 }
