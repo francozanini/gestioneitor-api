@@ -11,9 +11,17 @@
 |
 */
 
-Route::post('/expenses', 'ExpenseController@store');
-Route::get('/expenses/{id}', 'ExpenseController@show');
-Route::put('/expenses/{id}', 'ExpenseController@update');
-Route::delete('/expenses/{id}', 'ExpenseController@destroy');
+use \Illuminate\Support\Facades\Route;
 
-Route::get('/user/{id}/expenses', 'UserController@expenses');
+Route::post('/expenses', 'ExpenseController@store');
+Route::get('/expenses/{expense}', 'ExpenseController@show');
+Route::put('/expenses/{expense}', 'ExpenseController@update');
+Route::delete('/expenses/{expense}', 'ExpenseController@destroy');
+
+Route::get('/expenses/{expense}/details', 'ExpenseDetailsController@index');
+Route::get('/expenses/{expense}/details/{detail}', 'ExpenseDetailsController@show');
+Route::post('/expenses/{expense}/details}', 'ExpenseDetailsController@store');
+Route::delete('/expenses/{expense}/details/{detail}', 'ExpenseDetailsController@destroy');
+Route::put('/expenses/{expense}/details/{detail}', 'ExpenseDetailsController@update');
+
+Route::get('/user/{user}/expenses', 'UserController@expenses');
