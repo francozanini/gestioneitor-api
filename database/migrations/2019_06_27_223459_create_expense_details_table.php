@@ -19,7 +19,7 @@ class CreateExpenseDetailsTable extends Migration
             $table->foreign('expense_id')
                 ->references('id')
                 ->on('expenses')
-                ->nullable(false);
+                ->onDelete('cascade');
             $table->string('title');
             $table->double('amount', 8, 2);
             $table->text('description');

@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::resource('expenses', 'ExpenseController');
+Route::post('/expenses', 'ExpenseController@store');
+Route::get('/expenses/{id}', 'ExpenseController@getExpensesByUserId');
+Route::put('/expenses/{id}', 'ExpenseController@update');

@@ -12,5 +12,11 @@ class Expense extends Model
 
     }
 
+    public function creator()
+    {
+        return $this->belongsTo('App\User', 'creator_id');
+    }
+
+
 
 }

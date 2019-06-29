@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Expense;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Integer;
 
 class ExpenseController extends Controller
 {
@@ -21,15 +22,6 @@ class ExpenseController extends Controller
             ->header('Date', Carbon::now());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -39,41 +31,42 @@ class ExpenseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $expense = Expense::create($request->all());
+        $expense->save();
+
+        return response()
+            ->json($expense);
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Expense  $expense
+     * @param  integer        $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Expense $expense)
+    public function getExpensesByUserId($id)
     {
-        //
+        $expenses = Expense::where('creator_id', $id)->get();
+
+        return response()->json($expenses, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Expense  $expense
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Expense $expense)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Expense  $expense
+     * @param  integer                   $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Expense $expense)
+    public function update(Request $request, $id)
     {
-        //
+        Expense::where('id', $id)
+            ->update($request->all());
+
+        return response()
+            ->with('status', 204);
     }
 
     /**
