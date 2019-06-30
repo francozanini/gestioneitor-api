@@ -18,10 +18,10 @@ Route::get('/expenses/{expense}', 'ExpenseController@show');
 Route::put('/expenses/{expense}', 'ExpenseController@update');
 Route::delete('/expenses/{expense}', 'ExpenseController@destroy');
 
-Route::get('/expenses/{expense}/details', 'ExpenseDetailsController@index');
-Route::get('/expenses/{expense}/details/{detail}', 'ExpenseDetailsController@show');
-Route::post('/expenses/{expense}/details}', 'ExpenseDetailsController@store');
-Route::delete('/expenses/{expense}/details/{detail}', 'ExpenseDetailsController@destroy');
-Route::put('/expenses/{expense}/details/{detail}', 'ExpenseDetailsController@update');
+Route::get('/expenses/{expense}/details', 'ExpenseDetailController@index');
+Route::get('/details/{detail}', 'ExpenseDetailController@show');
+Route::post('/expenses/{expense}/details', 'ExpenseDetailController@store');
+Route::delete('/details/{detail}', 'ExpenseDetailController@destroy');
+Route::put('/details/{detail}', 'ExpenseDetailController@update');
 
 Route::get('/user/{user}/expenses', 'UserController@expenses');

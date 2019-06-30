@@ -5,10 +5,17 @@ namespace App\Http\Controllers;
 use App\Expense;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use phpDocumentor\Reflection\Types\Integer;
 
 class ExpenseController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,25 +24,28 @@ class ExpenseController extends Controller
     public function index()
     {
         $expenses = Expense::all();
-        return response()->json($expenses)
-            ->header('Content-Type', 'application/json')
-            ->header('Date', Carbon::now());
+
+        return new Response($expenses,
+            200, [
+                'Content-Type' => 'application/json',
+                'Date' => Carbon::now()
+            ]);
     }
 
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @return Response
      */
     public function store(Request $request)
     {
         $expense = Expense::create($request->all());
+
         $expense->save();
 
-        return response()
-            ->json($expense);
+        return new Response($expense, 200, []);
 
     }
 
@@ -43,7 +53,7 @@ class ExpenseController extends Controller
      * Display the specified resource.
      *
      * @param  integer        $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {
@@ -56,9 +66,9 @@ class ExpenseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Request  $request
      * @param  integer                   $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, $id)
     {
@@ -72,8 +82,8 @@ class ExpenseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Expense  $expense
-     * @return \Illuminate\Http\Response
+     * @param  integer  $id
+     * @return Response
      */
     public function destroy($id)
     {

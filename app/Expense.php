@@ -17,6 +17,11 @@ class Expense extends Model
         return $this->belongsTo('App\User', 'creator_id');
     }
 
+    public function details()
+    {
+        return $this->hasMany('App\ExpenseDetail');
+    }
+
 
 
 }
